@@ -13,14 +13,16 @@ import webbrowser
 # lr.fit(x,np.array(data['Salary']))
 
 
-st.title("Salary Predictor")
+st.title("Cunsumer Insights analysis in B2b")
 # st.image("data//sal.jpg",width = 800)
-nav = st.sidebar.radio("Navigation",["Home","Prediction","Contribute"])
+nav = st.sidebar.radio("Navigation",["Home","Visualization","Prediction","Contribute","Team"])
+if nav == "Team":
+    st.write("Team 9 AI -Immortals")
 if nav == "Home":
     
     if st.checkbox("Show Table"):
     #     st.table(data)
-        print("****")
+    
     # graph = st.selectbox("What kind of Graph ? ",["Non-Interactive","Interactive"])
 
     # val = st.slider("Filter data using years",0,20)
@@ -40,7 +42,15 @@ if nav == "Home":
     #     )
     #     fig = go.Figure(data=go.Scatter(x=data["YearsExperience"], y=data["Salary"], mode='markers'),layout = layout)
     #     st.plotly_chart(fig)
-    
+if nav == "Visualization":
+    st.write("Heading")    
+    link = "https://teams.microsoft.com/l/entity/1c4340de-2a85-40e5-8eb0-4f295368978b/Home?context=%7B%22subEntityId%22%3A%22https%253A%252F%252Fapp.powerbi.com%252Flinks%252F7v1_8Aq6iX%253Fctid%253D76a2ae5a-9f00-4f6b-95ed-5d33d77c4d61%2526pbi_source%253DlinkShare%2526bookmarkGuid%253D6c60fc61-4894-4759-ac57-4c8826347cee%22%7D"
+    st.markdown(link,unsafe_allow_html=True)
+    # <a target="_blank" href={link}>{text}</a>
+    # if st.button("PowerBi Report"):
+    #     link = "https://teams.microsoft.com/l/entity/1c4340de-2a85-40e5-8eb0-4f295368978b/Home?context=%7B%22subEntityId%22%3A%22https%253A%252F%252Fapp.powerbi.com%252Flinks%252F7v1_8Aq6iX%253Fctid%253D76a2ae5a-9f00-4f6b-95ed-5d33d77c4d61%2526pbi_source%253DlinkShare%2526bookmarkGuid%253D6c60fc61-4894-4759-ac57-4c8826347cee%22%7D"
+    #     webbrowser.open_new_tab(link)
+
 if nav == "Prediction":
     st.header("Know your Salary")
     # val = st.number_input("Enter you exp",0.00,20.00,step = 0.25)
@@ -60,11 +70,3 @@ if nav == "Contribute":
     #     to_add.to_csv("data//Salary_Data.csv",mode='a',header = False,index= False)
     #     st.success("Submitted")
 
-link = "https://teams.microsoft.com/l/entity/1c4340de-2a85-40e5-8eb0-4f295368978b/Home?context=%7B%22subEntityId%22%3A%22https%253A%252F%252Fapp.powerbi.com%252Flinks%252F7v1_8Aq6iX%253Fctid%253D76a2ae5a-9f00-4f6b-95ed-5d33d77c4d61%2526pbi_source%253DlinkShare%2526bookmarkGuid%253D6c60fc61-4894-4759-ac57-4c8826347cee%22%7D"
-st.markdown(link,unsafe_allow_html=True)
-
-if st.button("PowerBi Report"):
-    link = "https://teams.microsoft.com/l/entity/1c4340de-2a85-40e5-8eb0-4f295368978b/Home?context=%7B%22subEntityId%22%3A%22https%253A%252F%252Fapp.powerbi.com%252Flinks%252F7v1_8Aq6iX%253Fctid%253D76a2ae5a-9f00-4f6b-95ed-5d33d77c4d61%2526pbi_source%253DlinkShare%2526bookmarkGuid%253D6c60fc61-4894-4759-ac57-4c8826347cee%22%7D"
-
-    webbrowser.open_new_tab(link)
-    # st.markdown(link,unsafe_allow_html=True)
