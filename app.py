@@ -60,6 +60,8 @@ if nav == "Contribute":
     #     to_add.to_csv("data//Salary_Data.csv",mode='a',header = False,index= False)
     #     st.success("Submitted")
 
+link = "https://teams.microsoft.com/l/entity/1c4340de-2a85-40e5-8eb0-4f295368978b/Home?context=%7B%22subEntityId%22%3A%22https%253A%252F%252Fapp.powerbi.com%252Flinks%252F7v1_8Aq6iX%253Fctid%253D76a2ae5a-9f00-4f6b-95ed-5d33d77c4d61%2526pbi_source%253DlinkShare%2526bookmarkGuid%253D6c60fc61-4894-4759-ac57-4c8826347cee%22%7D"
+st.markdown(link,unsafe_allow_html=True)
 
 if st.button("PowerBi Report"):
     link = "https://teams.microsoft.com/l/entity/1c4340de-2a85-40e5-8eb0-4f295368978b/Home?context=%7B%22subEntityId%22%3A%22https%253A%252F%252Fapp.powerbi.com%252Flinks%252F7v1_8Aq6iX%253Fctid%253D76a2ae5a-9f00-4f6b-95ed-5d33d77c4d61%2526pbi_source%253DlinkShare%2526bookmarkGuid%253D6c60fc61-4894-4759-ac57-4c8826347cee%22%7D"
