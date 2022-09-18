@@ -18,9 +18,10 @@ st.title("Cunsumer Insights analysis in B2b")
 nav = st.sidebar.radio("Navigation",["Home","Visualization","Prediction","Contribute","Team"])
 if nav == "Team":
     st.write("Team 9 AI -Immortals")
+
 if nav == "Home":
-    
-    if st.checkbox("Show Table"):
+    st.write("Heading") 
+    # if st.checkbox("Show Table"):
     #     st.table(data)
     
     # graph = st.selectbox("What kind of Graph ? ",["Non-Interactive","Interactive"])
