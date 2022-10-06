@@ -237,6 +237,7 @@ if nav == "Sales Prediction":
 
     t = st.selectbox("What kind of Graph ? ",{"Product-1":6,"Product-2":7,'Product-3':9,
         "Product-4":12,"Product-5":13,"Product-6":14,"Product-7":18})
+
     if t == "Product-1":
         p_no=6
     if t == "Product-2":
@@ -283,6 +284,7 @@ if nav == "Sales Prediction":
 
                     results = mod.fit()
 
+
                 except:
                     continue
                     
@@ -299,7 +301,7 @@ if nav == "Sales Prediction":
 
         ax = y['2019':].plot(label='observed')
         pred.predicted_mean.plot(ax=ax, label='One-step ahead Forecast', alpha=1, figsize=(14, 7))
-        
+
         ax.fill_between(pred_ci.index,
                         pred_ci.iloc[:, 0],
                         pred_ci.iloc[:, 1], color='k', alpha=.4)
@@ -312,12 +314,13 @@ if nav == "Sales Prediction":
 
         y_forecasted = pred.predicted_mean
 
+
         y_forecasted = pred.predicted_mean
         y_truth = y['2019-08-01':]
 
         # Compute the mean square error
         mse = ((y_forecasted - y_truth) ** 2).mean()
-        rmse = round(np.sqrt(mse), 2)
+
 
         pred_uc = results.get_forecast(steps=6)
         pred_ci = pred_uc.conf_int()
