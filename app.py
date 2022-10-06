@@ -6,9 +6,9 @@ import webbrowser
 import numpy as np
 import pandas as pd
 # import matplotlib.pyplot as plt
-import seaborn as sns
-import os
-from mpl_toolkits.mplot3d import Axes3D
+# import seaborn as sns
+# import os
+# from mpl_toolkits.mplot3d import Axes3D
 import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans
 import seaborn as sns
