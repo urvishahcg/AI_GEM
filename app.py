@@ -20,7 +20,7 @@ import itertools
 # warnings.filterwarnings("ignore")
 plt.style.use('fivethirtyeight')
 import statsmodels.api as sm
-import matplotlib
+# import matplotlib
 
 st.title("Consumer insights analysis using wearable devices data in B2B")
 nav = st.sidebar.radio("Navigation",["Home","PowerBi Visualization","Visualization","Clustering","Sales Prediction","Team"])
