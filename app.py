@@ -9,7 +9,6 @@ import pandas as pd
 # import seaborn as sns
 # import os
 # from mpl_toolkits.mplot3d import Axes3D
-import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans
 import seaborn as sns
 import os
@@ -18,6 +17,8 @@ from sklearn import preprocessing
 #from PIL import Image
 import itertools
 # warnings.filterwarnings("ignore")
+import matplotlib.pyplot as plt
+
 plt.style.use('fivethirtyeight')
 import statsmodels.api as sm
 
