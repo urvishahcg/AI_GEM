@@ -1,14 +1,8 @@
-from asyncio.windows_events import NULL
+#from asyncio.windows_events import NULL
 from queue import Empty
-from tkinter.ttk import Style
+#from tkinter.ttk import Style
 import streamlit as st
-# import pandas as pd 
-# from matplotlib import pyplot as plt
-# from plotly import graph_objs as go
-# from sklearn.linear_model import LinearRegression
-# import numpy as np 
 import webbrowser
-# from clustering_age.py import
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -16,52 +10,31 @@ import seaborn as sns
 import os
 from mpl_toolkits.mplot3d import Axes3D
 import matplotlib.pyplot as plt
-import numpy as np
-import pandas as pd
 from sklearn.cluster import KMeans
-# from matplotlib import pyplot as plt
-import streamlit as st
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
 import seaborn as sns
 import os
 from mpl_toolkits.mplot3d import Axes3D
 from sklearn import preprocessing
-from PIL import Image
-import cv2
+#from PIL import Image
 import itertools
-import numpy as np
-import matplotlib.pyplot as plt
 # warnings.filterwarnings("ignore")
 plt.style.use('fivethirtyeight')
-import pandas as pd
 import statsmodels.api as sm
 import matplotlib
 
-
-
-# data = pd.read_csv("data//Salary_Data.csv")
-# x = np.array(data['YearsExperience']).reshape(-1,1)
-# lr = LinearRegression()
-# lr.fit(x,np.array(data['Salary']))
-
-
 st.title("Consumer insights analysis using wearable devices data in B2B")
-# st.image("data//sal.jpg",width = 800)
 nav = st.sidebar.radio("Navigation",["Home","PowerBi Visualization","Visualization","Clustering","Sales Prediction","Team"])
 
 
 if nav == "Home":
-    # st.write("Heading") 
-    image = Image.open('C:\AI_GEM\images\images.jpg')
-    st.image(image, caption='',width=500)
+    # image = Image.open('C:\Users\urshah\Downloads\AI_GEM_9\images\images.jpg')
+    # st.image(image, caption='',width=500)
+    st.write("")
 
 
 if nav == "PowerBi Visualization":
     st.markdown("<h2>PowerBi Visualization</h2>", unsafe_allow_html=True)
 
-    # if st.button("PowerBi Report"):
     st.write("1. Visualization report of Based on region")
     link1 = "https://teams.microsoft.com/l/entity/1c4340de-2a85-40e5-8eb0-4f295368978b/Home?context=%7B%22subEntityId%22%3A%22https%253A%252F%252Fapp.powerbi.com%252Fgroups%252Fme%252Freports%252F07a404b2-1fa6-42e0-993a-bfcf5e0f4cf3%252FReportSection%253Faction%253DOpenReport%2526pbi_source%253DMSTeams%2526bookmarkGuid%253D9b677413-b7a9-4b5e-9555-3f6c9425695c%22%7D"
     st.markdown(link1,unsafe_allow_html=True)
@@ -89,30 +62,13 @@ if nav == "PowerBi Visualization":
 
 if nav == "Visualization":
     st.write("Visualization")  
-    df = pd.read_csv("data_behavior_pattern/train.csv")
+    df = pd.read_csv("./data_behavior_pattern/train.csv")
 
     f1 = plt.figure(figsize=(10,6))
     plt.title("Ages Frequency")
     sns.axes_style("dark")
     sns.violinplot(y=df["age"])
-    # plt.show(f1)
     st.pyplot(f1)
-
-    # f2 = plt.figure(figsize=(15,6))
-    # plt.subplot(1,2,1)
-    # sns.boxplot(y=df["entropy_setps"], color="red")
-    # plt.subplot(1,2,2)
-    # sns.boxplot(y=df["entropy_setps"])
-    # # plt.show(f2)
-    # st.pyplot(f2)
-
-    # f3 =plt.figure(figsize=(15,6))
-    # plt.subplot(1,2,1)
-    # sns.boxplot(y=df["calories"], color="red")
-    # plt.subplot(1,2,2)
-    # sns.boxplot(y=df["calories"])
-    # # plt.show(f3)
-    # st.pyplot(f3)
 
 
     st.markdown("<h5 style='text-align: center;color: Green; text-decoration: underline;'> Gender wise Users</h5>", unsafe_allow_html=True)
@@ -123,7 +79,6 @@ if nav == "Visualization":
     sns.set_style("darkgrid")
     f4 = plt.figure(figsize=(10,4))
     sns.barplot(x=genders.index, y=genders.values)
-    # plt.show(f4)
     st.pyplot(f4)
 
 
@@ -144,7 +99,6 @@ if nav == "Visualization":
     plt.title("Number of Customer and Ages")
     plt.xlabel("Age")
     plt.ylabel("Number of Customer")
-    # plt.show()
     st.pyplot(f5)
 
 
@@ -181,23 +135,10 @@ if nav == "Visualization":
     sns.barplot(x=aix, y=aiy, palette="Set2")
     plt.xlabel("Burnt calories")
     plt.ylabel("Number of People")
-    # plt.show()
     st.pyplot(f7)
 
 
-    # sns.set_style("white")
-    # fig = plt.figure(figsize=(20,10))
-    # ax = fig.add_subplot(111, projection='3d')
-    # ax.scatter(df.age, df["burn_calories100"], df["steps100"], c='blue', s=60)
-    # ax.view_init(30, 185)
-    # plt.xlabel("Age")
-    # plt.ylabel("burn_calories100")
-    # ax.set_zlabel('steps100')
-    # # plt.show()
-    # st.pyplot(fig)
-
     #BMI Visualization
-
     label_encoder = preprocessing.LabelEncoder()
 
     df = pd.read_csv("data_behavior_pattern/train.csv")
@@ -244,7 +185,7 @@ if nav == "Clustering":
 
     st.write("Clustering")
 
-    df = pd.read_csv("data_behavior_pattern/train.csv")
+    df = pd.read_csv("./data_behavior_pattern/train.csv")
     df1 =df[['age','steps100','burn_calories100']]
     st.dataframe(df1)
 
@@ -290,11 +231,8 @@ if nav == "Clustering":
         st.pyplot(fig)
 
 
-
-# if nav == "Sales Visualization":
-
 if nav == "Sales Prediction":
-    df = pd.read_csv("C:\AI_GEM\AI-Immortals-Final\Fitbit-sales\data\sales_part_1.csv")
+    df = pd.read_csv("./data_sales/sales_part_1.csv")
     st.write("Products")
 
     t = st.selectbox("What kind of Graph ? ",{"Product-1":6,"Product-2":7,'Product-3':9,
@@ -321,14 +259,8 @@ if nav == "Sales Prediction":
         wearables_df = wearables_df.groupby('day_v')['total_sales'].sum().reset_index()
         print(wearables_df.head())
         wearables_df = wearables_df.set_index('day_v')
-        # wearables_df.index
         wearables_df.index = pd.to_datetime(wearables_df.index)
-        # wearables_df.index
         y = wearables_df['total_sales'].resample('MS').mean()
-        # y['2019':]
-        # y.plot(figsize=(15, 6))
-        # # # plt.show()
-        # st.pyplot()
 
         yyy = []
         for i in y:
@@ -405,21 +337,10 @@ if nav == "Sales Prediction":
         st.pyplot()
 
         st.write(pred_uc.predicted_mean)
-        
-    
-
-    
-
-if nav == "Contribute":
-    st.header("Contribute to our dataset")
-    ex = st.number_input("Enter your Experience",0.0,20.0)
-    sal = st.number_input("Enter your Salary",0.00,1000000.00,step = 1000.0)
     
 
 if nav == "Team":
     
-    # st.markdown("<h1 style='text-align: center; color: grey;'>Big headline</h1>", unsafe_allow_html=True)
-
     st.markdown("<h2 style='text-align: center;'>Team 9 AI -Immortals</h2>", unsafe_allow_html=True)
     st.markdown("<h5 style='text-align: center;color: grey;'>Urvi Shah (Team Lead)</h5>", unsafe_allow_html=True)
     st.markdown("<h5 style='text-align: center;color: grey;'>Soumendu Mukherjee (Team Lead)</h5>", unsafe_allow_html=True)
@@ -430,43 +351,3 @@ if nav == "Team":
     st.markdown("<h5 style='text-align: center;color: grey;'>Velmurugan</h5>", unsafe_allow_html=True)
     st.markdown("<h5 style='text-align: center;color: grey;'>Mentor : BIKASH DASH</h5>", unsafe_allow_html=True)
 
-
-# <a target="_blank" href={link}>{text}</a>
-    # if st.button("PowerBi Report"):
-    #     link = "https://teams.microsoft.com/l/entity/1c4340de-2a85-40e5-8eb0-4f295368978b/Home?context=%7B%22subEntityId%22%3A%22https%253A%252F%252Fapp.powerbi.com%252Flinks%252F7v1_8Aq6iX%253Fctid%253D76a2ae5a-9f00-4f6b-95ed-5d33d77c4d61%2526pbi_source%253DlinkShare%2526bookmarkGuid%253D6c60fc61-4894-4759-ac57-4c8826347cee%22%7D"
-    #     webbrowser.open_new_tab(link)
-    
-# val = st.number_input("Enter you exp",0.00,20.00,step = 0.25)
-# val = np.array(val).reshape(1,-1)
-# pred =lr.predict(val)[0]
-
-# if st.button("Predict"):
-#     st.success(f"Your predicted salary is {round(pred)}")
-# if st.button("submit"):
-    #     to_add = {"YearsExperience":[ex],"Salary":[sal]}
-    #     to_add = pd.DataFrame(to_add)
-    #     to_add.to_csv("data//Salary_Data.csv",mode='a',header = False,index= False)
-    #     st.success("Submitted")
-
-# if st.checkbox("Show Table"):
-#     st.table(data)
-
-# graph = st.selectbox("What kind of Graph ? ",["Non-Interactive","Interactive"])
-
-# val = st.slider("Filter data using years",0,20)
-# data = data.loc[data["YearsExperience"]>= val]
-# if graph == "Non-Interactive":
-#     plt.figure(figsize = (10,5))
-#     plt.scatter(data["YearsExperience"],data["Salary"])
-#     plt.ylim(0)
-#     plt.xlabel("Years of Experience")
-#     plt.ylabel("Salary")
-#     plt.tight_layout()
-#     st.pyplot()
-# if graph == "Interactive":
-#     layout =go.Layout(
-#         xaxis = dict(range=[0,16]),
-#         yaxis = dict(range =[0,210000])
-#     )
-#     fig = go.Figure(data=go.Scatter(x=data["YearsExperience"], y=data["Salary"], mode='markers'),layout = layout)
-#     st.plotly_chart(fig)
