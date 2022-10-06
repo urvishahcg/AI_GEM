@@ -9,6 +9,7 @@ import pandas as pd
 # import seaborn as sns
 # import os
 # from mpl_toolkits.mplot3d import Axes3D
+import sklearn
 from sklearn.cluster import KMeans
 import seaborn as sns
 import os
